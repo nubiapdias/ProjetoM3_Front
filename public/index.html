@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Jogos </title>
+  <link rel="stylesheet" href="./public/style.css" />
+</head>
+<!-- Restante do código... -->
+
+<body>
+
+  <section class="Home">
+    <div class="Home__header Header">
+      <div class="row">
+        <div class="Header__logo Logo">
+          <img src="public/imgs/logo.jpg" width="70px" alt="Logo" class="Logo__icone" />
+          <span class="Logo__titulo"> Jogos </span>
+        </div>
+
+        <div class="Header__opcoes Opcoes">
+          <div class="Opcoes__sacola Sacola">
+            <img src="public/imgs/sacola.svg" width="40px" class="Sacola__icone" alt="Sacola de compras" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <h2>Pesquisar Jogo</h2>
+    <div class="jogo-escolhido-espaco">
+      <div id="jogo-escolhido">
+        <input type="number" id="idJogo" placeholder="Digite o ID do jogo e clique em 'Escolher'" />
+        <button class="default-button" onclick="findByIdJogos()">ESCOLHER</button>
+      </div>
+      <div id="jogoEscolhido">
+
+      </div>
+    </div>
+    <h2>Jogos em Destaque:</h2>
+    <div class="Home__container">
+      <div class="JogosListaItem" id="jogoList">
+      </div>
+    </div>
+  </section>
+
+  <section class="button-modal-create">
+    <button type="button" class="default-button" onclick="abrirModal()">Cadastrar Jogo</button>
+  </section>
+
+  <section class="modal-overlay" id="overlay">
+
+    <div class="modal">
+
+      <div class="modal-header">
+        <h2 id="title-header-modal"> Cadastrar um jogo </h2>
+        <a onclick="fecharModalCadastro()" class="close-modal">x</a>
+      </div>
+
+      <div class="modal-body">
+        <div>
+          <input type="hidden" id="id">
+          <input type="text" name="title" id="title" placeholder="Nome do jogo">
+          <input type="number" name="preco" id="preco" placeholder="Preço">
+          <textarea type="text" name="type" id="type" placeholder="Gênero do jogo"></textarea>
+          <input type="text" name="foto" id="foto" placeholder="Link de uma imagem do jogo">
+          <button id="button-form-modal" onclick="createJogo()">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="modal-overlay" id="overlay-delete">
+    <div class="modal">
+        <div class="modal-header">
+            <h2 id="title-header-modal">Confirmação de deleção</h2>
+            <a onclick="fecharModalDelete()" class="close-modal">x</a>
+        </div>
+        <div class="modal-body-delete">
+            <p>Deseja realmente apagar essa paleta?</p>
+            <div class="btns_delete">
+                <button class="btn_delete_no btn_delete" onclick="fecharModalDelete()">Não</button>
+                <button class="btn_delete_yes btn_delete">Sim</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="public/script.js"></script>
+</body>
+
+</html>
